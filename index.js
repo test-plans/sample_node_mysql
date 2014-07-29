@@ -6,7 +6,7 @@ var db = knex.initialize({
     host     : '127.0.0.1',
     user     : 'shippable',
     password : '',
-    database : 'test'
+    database : 'project-test'
   }
 });
 
