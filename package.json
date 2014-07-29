@@ -4,7 +4,7 @@
   "description": "Testing MySql service",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/_mocha -R xunit-file project-test.js"
+    "test": "./node_modules/.bin/_mocha -R xunit-file test.js"
   },
   "repository": {
     "type": "git",
