@@ -2,7 +2,8 @@ language: node_js
 
 node_js:
   - 0.10
-
+env:
+ secure: hPhEZB67lOjub21EgQl4lSp9Nkb9ILo6ibBs28050AD+636XV2KjPw0lB7OcD8p30mQ3H1c3D86U9ft7Y5CSY1ry56lLl77jsXrK9sAR3DpmYksbZMDG6t5ADk0r5aQVfjtXJGTfPdWXOhA7X6UguS9q313q4yi+U1OufWOGo0udhHi+Hu7yAbSsfjdRDvXgjX51zfy1uoLFwBNtENj8WtDpWqP1bUXiuGzxmnGCIB8eDrWOUwYaofGOJwdG6KTzkREoduhveaVlcpHQpl5yuKgSJfMwdNreWFa/pNd26iYSRKKiZV0GbIWy4OU34/CTuw6SS/eIA81M+ogxitU0ng==
 
 services:
   - mysql
@@ -21,6 +22,8 @@ before_script:
 
 script:
   - npm test
+  - echo $foo 
+  - echo $bar
 
 # Generate coverage report with istanbul
 after_script:
