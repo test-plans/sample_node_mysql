@@ -16,6 +16,7 @@ env:
 # Make folders for the reports, and create the SQL db
 before_script:
   - echo $key
+  - mysql -ushippable -e "show variables like '%version';" 
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - mysql -e 'drop database if exists test;'
