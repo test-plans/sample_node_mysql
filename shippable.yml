@@ -1,5 +1,5 @@
 language: node_js
-build_image: shippable/minv2:beta
+#build_image: shippable/minv2:beta
 node_js:
   - 0.10.25
   - 0.11
@@ -11,11 +11,11 @@ services:
 env:
  global:
    - XUNIT_FILE=shippable/testresults/result.xml
-   - secure: T5jsR3WZmibdMqL9/uO+wTuqVFYBxIm+brz/YnoMK4X3UUGtXvuuNu3vXOiLdq5tiqb4y5TM4tttl3o3TrzmTGVCR1CXEEhMwz9m9oscaKxyiM25ZvcUe2oiU7c69y2yM4YPCjQE6Uh4KaPdAVZb2yB3aIcNYnYkYueJPpw7oo70ASxzr+SQ+oFJ/dHWTFVCYxDwkn3MJZQjcrkdPS5AglhTLBfHK3GtY19SLnIJv2kj0w/TcVnuKMW4UMg1UsShd5HaTVBvJ2zWEZtrMt6xMHiORDwqzD4UNgGwa7VR8ieEYxWOazi6/QJRFiO6vFZlqdqfjdzsPO0UisoJqzAa3Q==
+  # - secure: T5jsR3WZmibdMqL9/uO+wTuqVFYBxIm+brz/YnoMK4X3UUGtXvuuNu3vXOiLdq5tiqb4y5TM4tttl3o3TrzmTGVCR1CXEEhMwz9m9oscaKxyiM25ZvcUe2oiU7c69y2yM4YPCjQE6Uh4KaPdAVZb2yB3aIcNYnYkYueJPpw7oo70ASxzr+SQ+oFJ/dHWTFVCYxDwkn3MJZQjcrkdPS5AglhTLBfHK3GtY19SLnIJv2kj0w/TcVnuKMW4UMg1UsShd5HaTVBvJ2zWEZtrMt6xMHiORDwqzD4UNgGwa7VR8ieEYxWOazi6/QJRFiO6vFZlqdqfjdzsPO0UisoJqzAa3Q==
 
 # Make folders for the reports, and create the SQL db
 before_script:
-  - echo $key
+#  - echo $key
   - mysql -ushippable -e "show variables like '%version';" 
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
