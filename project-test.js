@@ -16,10 +16,10 @@ describe('MySql Database', function () {
   });
   it('should retrieve that name', function () {
     db('things')
-      .where({ name: 'Johnson' })
+      .where({ name: 'Johnnson' })
       .select('name')
       .then(function (name) {
-        expect(name[0].name).to.equal('Johson');
+        expect(name[0].name).to.equal('Johnson');
       });
   });
 });
