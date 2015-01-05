@@ -1,4 +1,5 @@
 language: node_js
+
 #build_image: shippable/minv2:beta
 node_js:
   - 0.10.25
@@ -24,7 +25,6 @@ before_script:
   - mysql -e "create database if not exists \`project-test\`;"
 
 archive: true 
-  
   
 script:
   - npm test
