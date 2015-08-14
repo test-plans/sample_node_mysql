@@ -19,7 +19,7 @@ describe('MySql Database', function () {
       .where({ name: 'Johnson' })
       .select('name')
       .then(function (name) {
-        expect(name[0].name).to.equal('Johnson');
+        expect(name[0].name).to.equal('Johnsn');
       });
   });
 });
