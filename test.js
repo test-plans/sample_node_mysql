@@ -16,7 +16,7 @@ describe('MySql Database', function () {
   });
   it('should retrieve that name', function () {
     db('things')
-      .where({ name: 'Jhnson' })
+      .where({ name: 'Johnson' })
       .select('name')
       .then(function (name) {
         expect(name[0].name).to.equal('Johnson');
