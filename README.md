@@ -8,3 +8,5 @@ To run the tests:
 `npm test`
 
 Or, preferably, deploy on Shippable.com.
+
+pr build
