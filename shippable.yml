@@ -6,6 +6,7 @@ node_js:
 services:
   - mysql
 
+
 # For xunit-file module to put results in shippable folder
 env:
  global:
