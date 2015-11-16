@@ -6,13 +6,10 @@ node_js:
 services:
   - mysql
 
-
 # For xunit-file module to put results in shippable folder
 env:
  global:
    - secure: H+cwPVG5DJ0ZIqf1F9IMIPVXNHPYtZiIv3++2TjXnq8IrGxxtPSqmhiKb5eURqScZ582NV6BDzOwIFtjCpGVwxNH/5H2Nf2yYYvbAmE083R/E8hNIDPgkqav/l4pT3zocydDGUbcPuF4g0toXL/k6z6uwzPoI9N1kBZ0TvjQMgrad4PcH5wZPl9/LUWAqQT3aFUjzywYfTkkSKD2mrVySkTrS8muZz6H7ahzpk62cwpz7hzmqkse8J5Ukks3AUSf1/jkxN00TTEOxDtKafUwgGOUjsW6fBUrLNhYvcYDMcH2TKzkHGhY81vMRfyjIdvTBxXrD0zLjsBh9aHqm50C6w==
- #secure: hPhEZB67lOjub21EgQl4lSp9Nkb9ILo6ibBs28050AD+636XV2KjPw0lB7OcD8p30mQ3H1c3D86U9ft7Y5CSY1ry56lLl77jsXrK9sAR3DpmYksbZMDG6t5ADk0r5aQVfjtXJGTfPdWXOhA7X6UguS9q313q4yi+U1OufWOGo0udhHi+Hu7yAbSsfjdRDvXgjX51zfy1uoLFwBNtENj8WtDpWqP1bUXiuGzxmnGCIB8eDrWOUwYaofGOJwdG6KTzkREoduhveaVlcpHQpl5yuKgSJfMwdNreWFa/pNd26iYSRKKiZV0GbIWy4OU34/CTuw6SS/eIA81M+ogxitU0ng==
-
    - XUNIT_FILE=shippable/testresults/result.xml
 
 # Make folders for the reports, and create the SQL db
@@ -32,3 +29,15 @@ script:
 after_script:
   - ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha test.js -- -u tdd
   - ./node_modules/.bin/istanbul report cobertura --dir  shippable/codecoverage/
+
+notifications:
+ email:
+   recipients:
+     - "vidya@shippable.com"
+   on_success: change
+   on_failure: always
+ irc:
+   pull_requests: true
+   channels:  
+    - "chat.freenode.net#test-irc"
+    - "chat.freenode.net#testing2"
