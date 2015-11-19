@@ -7,4 +7,4 @@ To run the tests:
 
 Or, preferably, deploy on Shippable.com.
 
-pr build
+pr build from non collab
